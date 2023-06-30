@@ -106,7 +106,7 @@ function AddService(props) {
           onChange={(e) => setEmail(e.target.value)}
         />
  
-        <button type="submit" >Add Service</button>
+        <button type="submit">Add Service</button>
       </form>
     </div>
   );

@@ -1,5 +1,4 @@
 import authService from "../services/auth.service";
-import AddService from "../components/AddService"; 
 import { useEffect, useState } from "react";
 import ServiceCard from "../components/ServiceCard";
  
@@ -25,9 +24,7 @@ function ServiceListPage() {
   return (
     <div className="ServiceListPage">
         <p>All Services</p>
-      
-      <AddService refreshServices={getAllServices} />
-      
+            
       <h3>Show list of services:</h3>
       { services.map((service) => (
         <ServiceCard key={service._id} {...service} />
