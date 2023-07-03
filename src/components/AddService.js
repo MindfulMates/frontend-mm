@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
- 
+import { useNavigate } from "react-router-dom";
+
 const API_URL = "http://localhost:5005";
 
 
@@ -13,18 +14,21 @@ function AddService(props) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
 
- 
-  
-  const handleSubmit = (e) => {      
+  const navigate = useNavigate()
+
+
+  const handleSubmit = (e) => {
     e.preventDefault();
- 
+
     // We need the service id when creating the new review
     const { serviceId } = props;
     // Create an object representing the body of the POST request
-    const requestBody = { title, description, place, date, price, name, email, serviceId};
- 
+    const requestBody = { title, description, place, date, price, name, email, serviceId };
+
+    const storesToken = localStorage.getItem("authToken")
+
     axios
-      .post(`${API_URL}/api/service`, requestBody)
+      .post(`${API_URL}/api/service`, requestBody, { headers: { Authorization: `Bearer ${storesToken}` } })
       .then((response) => {
         // Reset the state to clear the inputs
         setTitle("");
@@ -35,82 +39,98 @@ function AddService(props) {
         setName("");
         setEmail("")
 
-      
+
         // Invoke the callback function coming through the props
         // from the ServiceDetailsPage, to refresh the service details
-        props.refreshService();
+        // props.refreshService();
+        navigate("/services")
       })
       .catch((error) => console.log(error));
   };
- 
-  
+
+
   return (
     <div className="AddService">
       <h3>Add New Service</h3>
-      
+
       <form onSubmit={handleSubmit}>
+        <label>Category:
+          <select>
+            <option value="Yoga"> Yoga 🧘</option>
+            <option value="Massage"> Massage 💆‍♀️</option>
+            <option value="SoundHealing"> SoundHealing 🔉</option>
+            <option value="Other"> Other ❔</option>
+          </select>
+        </label>
+        
+        <label>Title:
+          <input
+            type="text"
+            name="title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
+        </label>
 
-        <label>Title:</label>
-        <input
-          type="text"
-          name="title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
- 
-        <label>Description:</label>
-        <textarea
-          type="text"
-          name="description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
+        <label>Description:
+          <textarea
+            type="text"
+            name="description"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+          />
+        </label>
 
-        <label>Place:</label>
-        <textarea
-          type="text"
-          name="place"
-          value={place}
-          onChange={(e) => setPlace(e.target.value)}
-        />
+        <label>Place:
+          <textarea
+            type="text"
+            name="place"
+            value={place}
+            onChange={(e) => setPlace(e.target.value)}
+          />
+        </label>
 
-        <label>Date:</label>
-        <textarea
-          type="date"
-          name="date"
-          value={date}
-          onChange={(e) => setDate(e.target.value)}
-        />
+        <label>Date:
+          <textarea
+            type="date"
+            name="date"
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
+          />
+        </label>
 
-        <label>Price:</label>
-        <textarea
-          type="Number"
-          name="price"
-          value={price}
-          onChange={(e) => setPrice(e.target.value)}
-        />
+        <label>Price:
+          <textarea
+            type="Number"
+            name="price"
+            value={price}
+            onChange={(e) => setPrice(e.target.value)}
+          />
+        </label>
 
-        <label>Name:</label>
-        <textarea
-          type="text"
-          name="name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
+        <label>Name:
+          <textarea
+            type="text"
+            name="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+        </label>
 
-        <label>Email:</label>
-        <textarea
-          type="text"
-          name="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
- 
+        <label>Email:
+          <textarea
+            type="text"
+            name="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </label>
+
         <button type="submit">Add Service</button>
       </form>
     </div>
   );
 }
- 
+
 export default AddService;
 
