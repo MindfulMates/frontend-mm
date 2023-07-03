@@ -13,6 +13,8 @@ function AddService(props) {
   const [price, setPrice] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [category, setCategory] = useState("");
+
 
   const navigate = useNavigate()
 
@@ -23,7 +25,7 @@ function AddService(props) {
     // We need the service id when creating the new review
     const { serviceId } = props;
     // Create an object representing the body of the POST request
-    const requestBody = { title, description, place, date, price, name, email, serviceId };
+    const requestBody = { title, description, place, date, price, name, email, category, serviceId };
 
     const storesToken = localStorage.getItem("authToken")
 
@@ -38,6 +40,7 @@ function AddService(props) {
         setPrice("");
         setName("");
         setEmail("")
+        setCategory("")
 
 
         // Invoke the callback function coming through the props

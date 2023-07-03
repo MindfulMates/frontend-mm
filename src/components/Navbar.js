@@ -33,7 +33,7 @@ function Navbar() {
                         <button>Profile</button>
                     </Link>
 
-                    <span>{user && user.name}</span>
+                    <span>Hi {user && user.name}😀</span>
 
                 </>
             )}

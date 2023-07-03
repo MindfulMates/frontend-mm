@@ -23,9 +23,8 @@ function ServiceListPage() {
   
   return (
     <div className="ServiceListPage">
-        <p>All Services</p>
-            
-      <h3>Show list of services:</h3>
+           
+      <h3>Find your Service:</h3>
       { services.map((service) => (
         <ServiceCard key={service._id} {...service} />
       ))}     
