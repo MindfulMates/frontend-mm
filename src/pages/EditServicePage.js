@@ -47,7 +47,6 @@ function EditServicePage() {
   const updateService = (e) => {
     e.preventDefault();
     const requestBody = { title, description, place, date, price, name, email, category };
-    // const storedToken = localStorage.getItem("authToken");
     servicesService.updateService(serviceId, requestBody)
       .then((response) => {
         const oneService = response.data;
@@ -56,16 +55,6 @@ function EditServicePage() {
       .catch((error) => console.log(error));
   };
  
-  // const handleFormSubmit = (e) => {
-  //   const requestBody = { title, description, place, date, price, name, email, category };
-  //   axios
-  //     .put(`${API_URL}/api/services/${serviceId}`,{ headers: { Authorization: `Bearer ${storedToken}` } }, requestBody)
-  //     .then((response) => {
-  //       navigate(`/services/${serviceId}`);
-  //     })
-  //     .catch((error) => console.log(error));
-  // };
-  
   
   
   return (
