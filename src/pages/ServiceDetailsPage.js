@@ -5,8 +5,9 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import servicesService from "../services/services.service";
 // import AddService from "../components/AddService"
+import AddReview from "../components/AddReview"
 
- 
+
 const API_URL = "http://localhost:5005";
 
 function ServiceDetailsPage (props) {
@@ -54,7 +55,7 @@ function ServiceDetailsPage (props) {
       {service && (
         <>
           <h1>{service.title}</h1>
-          <p>add reviews later in here</p>
+          <p>show reviews in here in numbers 1-5</p>
 
           <Link to={`/services/edit/${serviceId}`}>
         <button>Edit</button>
@@ -68,6 +69,10 @@ function ServiceDetailsPage (props) {
           <p>{service.date}</p>
           <p>{service.name}</p>
           <p>{service.email}</p>
+          <p>Rate the service via review here</p>
+          <AddReview />
+
+
         </>
       )}
       
