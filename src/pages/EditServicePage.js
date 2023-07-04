@@ -60,10 +60,12 @@ function EditServicePage() {
       <h3>Edit your Service</h3>
  
       <form onSubmit={updateService}>
-        
+
         <label>Category:
-          <select name="category">
+          <select onChange={(e) => setCategory(e.target.value)}>
+          <option value="" selected disabled> select an option</option>
             <option value="Yoga"> Yoga 🧘</option>
+            <option value="Meditation"> Meditation 💆‍♀️</option>
             <option value="Massage"> Massage 💆‍♀️</option>
             <option value="SoundHealing"> SoundHealing 🔉</option>
             <option value="Other"> Other ❔</option>
