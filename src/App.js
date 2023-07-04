@@ -49,7 +49,7 @@ function App() {
         {
           <Route
             path="/services"
-            element={<IsPrivate> <ServiceListPage /> </IsPrivate>}
+            element={<ServiceListPage />}
           />
         }
 

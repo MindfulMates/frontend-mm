@@ -1,8 +1,6 @@
 import authService from "./../services/auth.service"; 
 import React, { useState, useEffect } from "react";
 
-const API_URL = "http://localhost:5005";
-
 const AuthContext = React.createContext();
  
 function AuthProviderWrapper(props) {

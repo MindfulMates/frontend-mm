@@ -3,9 +3,7 @@ import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";  //  <== IMPORT 
 import servicesService from "../services/services.service";
 
- 
-const API_URL = "http://localhost:5005";
- 
+  
 function EditServicePage() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -25,7 +23,7 @@ function EditServicePage() {
  
   useEffect(() => {
     axios
-      .get(`${API_URL}/api/services/${serviceId}`,
+      .get(`${process.env.REACT_APP_SERVER_URL}/api/services/${serviceId}`,
       { headers: { Authorization: `Bearer ${storedToken}` } }
       )
       .then((response) => {

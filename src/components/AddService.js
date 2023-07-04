@@ -2,8 +2,6 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const API_URL = "http://localhost:5005";
-
 
 function AddService(props) {
   const [title, setTitle] = useState("");
@@ -30,7 +28,7 @@ function AddService(props) {
     const storesToken = localStorage.getItem("authToken")
 
     axios
-      .post(`${API_URL}/api/newservice`, requestBody, { headers: { Authorization: `Bearer ${storesToken}` } })
+      .post(`${process.env.REACT_APP_SERVER_URL}/api/newservice`, requestBody, { headers: { Authorization: `Bearer ${storesToken}` } })
       .then((response) => {
         // Reset the state to clear the inputs
         setTitle("");

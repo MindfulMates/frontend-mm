@@ -8,8 +8,6 @@ import servicesService from "../services/services.service";
 import AddReview from "../components/AddReview"
 
 
-const API_URL = "http://localhost:5005";
-
 function ServiceDetailsPage (props) {
   const [service, setService] = useState(null);
   const { serviceId } = useParams();
@@ -23,7 +21,7 @@ function ServiceDetailsPage (props) {
     // Send the token through the request "Authorization" Headers
     axios
       .get(
-        `${API_URL}/api/services/${serviceId}`,
+        `${process.env.REACT_APP_SERVER_URL}/api/services/${serviceId}`,
         { headers: { Authorization: `Bearer ${storedToken}` } }
       )
       .then((response) => {

@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
- 
-const API_URL = "http://localhost:5005";
+
  
 function AddReview(props) {
   const [review, setReview] = useState("");
@@ -20,7 +19,7 @@ function AddReview(props) {
     // Send the token through the request "Authorization" Headers
     axios
       .post(
-      `${API_URL}/api/reviews`,
+      `${process.env.REACT_APP_SERVER_URL}/api/reviews`,
       requestBody,
       { headers: { Authorization: `Bearer ${storedToken}` } }
     )
