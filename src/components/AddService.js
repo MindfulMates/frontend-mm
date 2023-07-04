@@ -30,7 +30,7 @@ function AddService(props) {
     const storesToken = localStorage.getItem("authToken")
 
     axios
-      .post(`${API_URL}/api/service`, requestBody, { headers: { Authorization: `Bearer ${storesToken}` } })
+      .post(`${API_URL}/api/newservice`, requestBody, { headers: { Authorization: `Bearer ${storesToken}` } })
       .then((response) => {
         // Reset the state to clear the inputs
         setTitle("");
@@ -57,9 +57,12 @@ function AddService(props) {
       <h3>Add New Service</h3>
 
       <form onSubmit={handleSubmit}>
+
         <label>Category:
-          <select>
+          <select onChange={(e) => setCategory(e.target.value)}>
+          <option value="" selected disabled> select an option</option>
             <option value="Yoga"> Yoga 🧘</option>
+            <option value="Meditation"> Meditation 💆‍♀️</option>
             <option value="Massage"> Massage 💆‍♀️</option>
             <option value="SoundHealing"> SoundHealing 🔉</option>
             <option value="Other"> Other ❔</option>

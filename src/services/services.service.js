@@ -19,9 +19,9 @@ class ServicesService {
     });
   }
  
-  // POST /api/services
+  // POST /api/newservice
   createService = requestBody => {
-    return this.api.post('/api/services', requestBody);
+    return this.api.post('/api/newservice', requestBody);
   };
  
   // GET /api/services

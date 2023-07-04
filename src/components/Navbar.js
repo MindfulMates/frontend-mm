@@ -20,7 +20,7 @@ function Navbar() {
                 <button>Services</button>
             </Link>
 
-            <Link to="/service">
+            <Link to="/newservice">
                 <button>Add Service</button>
             </Link>
 

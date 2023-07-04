@@ -11,7 +11,7 @@ function AddNewService() {
  
   const getAllServices = () => {
     authService.api
-      .get(`${API_URL}/api/service`)
+      .get(`${API_URL}/api/services`)
       .then((response) => setServices(response.data))
       .catch((error) => console.log(error));
   };

@@ -32,7 +32,7 @@ function App() {
         />
 
         <Route
-          path="/service"
+          path="/newservice"
           element={<IsPrivate> <AddNewService /> </IsPrivate>}
         />
 
