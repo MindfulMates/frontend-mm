@@ -10,6 +10,8 @@ import ServiceDetailsPage from "./pages/ServiceDetailsPage";
 import ServiceListPage from "./pages/ServiceListPage";
 import AddNewService from "./pages/AddNewService";
 import EditServicePage from "./pages/EditServicePage";
+import ReviewList from "./components/ReviewList";
+
 
 import UserProfilePage from "./pages/UserProfilePage";
 import SignupPage from "./pages/SignupPage";
@@ -29,6 +31,11 @@ function App() {
         <Route
           path="/userprofilepage"
           element={<IsPrivate> <UserProfilePage /> </IsPrivate>}
+        />
+
+        <Route
+          path="/reviews"
+          element={<IsPrivate> <ReviewList /> </IsPrivate>}
         />
 
         <Route

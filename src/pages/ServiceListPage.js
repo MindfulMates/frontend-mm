@@ -1,7 +1,8 @@
 import authService from "../services/auth.service";
 import { useEffect, useState } from "react";
 import ServiceCard from "../components/ServiceCard";
- 
+
+
  
 function ServiceListPage() {
   const [services, setServices] = useState([]);
@@ -23,9 +24,10 @@ function ServiceListPage() {
     <div className="ServiceListPage">
            
       <h3>Find your Service:</h3>
-      { services.map((service) => (
+
+    { services.map((service) => (
         <ServiceCard key={service._id} {...service} />
-      ))}     
+      ))}  
 
     </div>
   );

@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
  
 function AddReview(props) {
@@ -7,8 +8,8 @@ function AddReview(props) {
   const [description, setDescription] = useState("");
   const [friendly, setFriendly] = useState("");
 
- 
-  
+  const navigate = useNavigate()
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const requestBody = { review, description, friendly };
@@ -19,7 +20,7 @@ function AddReview(props) {
     // Send the token through the request "Authorization" Headers
     axios
       .post(
-      `${process.env.REACT_APP_SERVER_URL}/api/reviews`,
+      `${process.env.REACT_APP_SERVER_URL}/api/review`,
       requestBody,
       { headers: { Authorization: `Bearer ${storedToken}` } }
     )
@@ -28,7 +29,9 @@ function AddReview(props) {
       setReview("");
       setDescription("");
       setFriendly("");
-      props.refreshReviews();
+      // props.refreshReviews();
+      // navigate("/services")
+      window.location.reload(true)
     })
       .catch((error) => console.log(error));
   };
@@ -36,8 +39,8 @@ function AddReview(props) {
   return (
     <div className="AddReview">
       <h3>Add Review</h3>
- 
-      <form>
+     
+      <form onSubmit={handleSubmit}>
         <label>Review:</label>
         <input
           type="Number"

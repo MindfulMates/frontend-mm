@@ -5,7 +5,9 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import servicesService from "../services/services.service";
 // import AddService from "../components/AddService"
-import AddReview from "../components/AddReview"
+import AddReview from "../components/AddReview";
+import ReviewCard from "../components/ReviewCard";
+import ReviewList from "../components/ReviewList";
 
 
 function ServiceDetailsPage (props) {
@@ -68,18 +70,17 @@ function ServiceDetailsPage (props) {
           <p>{service.name}</p>
           <p>{service.email}</p>
           <p>Rate the service via review here</p>
-          <AddReview />
-
 
         </>
       )}
       
-      {/* <AddTask refreshProject={getProject} projectId={projectId} />    
+      <AddReview refreshService={getService} serviceId={serviceId} />    
  
-      { project && project.tasks.map((task) => (
-        <TaskCard key={task._id} {...task} /> 
+      { service && service.review.map((review) => (
+        <ReviewCard key={review._id} {...review} /> 
       ))} 
-       */}
+      
+      <ReviewList/>
    
 
    <button onClick={deleteService}>Delete</button>
