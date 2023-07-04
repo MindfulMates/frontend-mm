@@ -40,7 +40,6 @@ function AddService(props) {
         setEmail("")
         setCategory("")
 
-
         // Invoke the callback function coming through the props
         // from the ServiceDetailsPage, to refresh the service details
         // props.refreshService();
