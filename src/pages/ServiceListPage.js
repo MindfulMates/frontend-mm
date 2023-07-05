@@ -2,6 +2,7 @@ import authService from "../services/auth.service";
 import { useEffect, useState } from "react";
 import ServiceCard from "../components/ServiceCard";
 
+import Row from "react-bootstrap/Row";
 
  
 function ServiceListPage() {
@@ -25,9 +26,14 @@ function ServiceListPage() {
            
       <h3>Find your Service:</h3>
 
+      <Row xs={1} md={4} className="ServiceCardRow">
+
     { services.map((service) => (
         <ServiceCard key={service._id} {...service} />
       ))}  
+
+    </Row>
+
     </div>
   );
 }

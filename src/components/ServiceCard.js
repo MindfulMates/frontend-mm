@@ -2,35 +2,34 @@ import { Link } from "react-router-dom";
 
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
-// We are deconstructing props object directly in the parentheses of the function
+
 function ServiceCard({ title, description, place, date, price, name, email, category, imageUrl, _id }) {
 
   return (
-    <div className="ServiceCard">
+    
+    <div>
 
-      <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src="holder.js/100px180" />
-        <Card.Body>
-        <img src={imageUrl} alt="service" width="200" />
+
+
+    <Col className="ServiceCardCol">
+
+      <Card>
+        <Card.Img className="ServiceCardImg" variant="top" src={imageUrl} alt="service"/>
+        <Card.Body className="ServiceCardBody">
           <Card.Title>{title}</Card.Title>
-          <Card.Text>{place}</Card.Text>
-          <Card.Text>{price}</Card.Text>
+          <Card.Text>Location: {place}</Card.Text>
+          <Card.Text>starting at {price} €</Card.Text>
           <Card.Text>{category}</Card.Text>
-          <Card.Text>Number of rating here!</Card.Text>
+          <Card.Text>Average rate a number ratings!</Card.Text>
           <Link to={`/services/${_id}`}>
-          <Button variant="primary">check details</Button>
+          <Button className="ServiceCardButton" variant="primary">Book now!</Button>
           </Link>
         </Card.Body>
       </Card>
-
-      {/* <Link to={`/services/${_id}`}>
-        <h3>{title}</h3>
-      </Link>
-      <p>{place}</p>
-      <p>{price}</p>
-      <p>{category}</p>
-      <p>Rating add here</p> */}
+      </Col>
 
     </div>
   );

@@ -36,3 +36,28 @@
     transform: rotate(360deg);
   }
 }
+
+.ServiceCardRow {
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
+
+/* .ServiceCardCol {
+  padding-left: 10%;
+  padding-right: 10%;
+} */
+
+.ServiceCardBody {
+  line-height: 1;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.ServiceCardImg {
+  height: 10rem;
+  width: auto;
+  object-fit: contain;
+}
+

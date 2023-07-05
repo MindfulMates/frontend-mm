@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 // import { useEffect, useState } from "react";
 // import axios from "axios";
 
-import Navbar from "./components/Navbar";
+import Navigationbar from "./components/Navigationbar";
 import HomePage from "./pages/HomePage";
 
 import ServiceDetailsPage from "./pages/ServiceDetailsPage";
@@ -23,7 +23,7 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar />
+      <Navigationbar />
 
       <Routes>
         <Route path="/" element={<HomePage />} />

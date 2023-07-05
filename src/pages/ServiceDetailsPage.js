@@ -55,7 +55,7 @@ function ServiceDetailsPage (props) {
       {service && (
         <>
           <h1>{service.title}</h1>
-          <p>show reviews in here in numbers 1-5</p>
+          <p>show reviews in here in numbers 1-10 </p>
 
           <Link to={`/services/edit/${serviceId}`}>
         <button>Edit</button>
@@ -79,9 +79,7 @@ function ServiceDetailsPage (props) {
       { service && service.review.map((review) => (
         <ReviewCard key={review._id} {...review} /> 
       ))} 
-      
-      {/* <ReviewList/> */}
-   
+       
 
    <button onClick={deleteService}>Delete</button>
 

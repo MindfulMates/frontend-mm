@@ -41,7 +41,7 @@ function AddService(props) {
         setName("");
         setEmail("");
         setCategory("");
-        setImageUrl("")
+        setImageUrl("");
 
         // Invoke the callback function coming through the props
         // from the ServiceDetailsPage, to refresh the service details

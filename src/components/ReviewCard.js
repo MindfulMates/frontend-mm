@@ -3,11 +3,10 @@ import axios from "axios";
 function ReviewCard({ review, description, friendly }) {
     return (
       <div className="ReviewCard card">
-        <h3>{review}</h3>
-        <h4>Description:</h4>
+        <p>Rating: {review}</p>
+        <p>Description:</p>
         <p>{description}</p>
-        <h4>Was the person friendly?:</h4>
-        <p>{friendly}</p>
+        <p>Was the person friendly?: {friendly.toString()}</p>
       </div>
     );
   }
