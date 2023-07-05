@@ -10,6 +10,8 @@ function UserProfilePage() {
         logOutUser
     } = useContext(AuthContext);
 
+    // get.findUserbyId()
+
     return (
       <div>
         <h1>Your Profile!</h1>
@@ -19,10 +21,7 @@ function UserProfilePage() {
         <span>{user && user.email}</span>
         <br/>
 
-        <span>{user && user.password}</span>
-
-
-      </div>
+     </div>
     );
   }
    

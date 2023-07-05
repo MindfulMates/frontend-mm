@@ -61,7 +61,7 @@ function ServiceDetailsPage (props) {
         <button>Edit</button>
       </Link>  
 
-          <p>add pictures here</p>
+          <img src={service.imageUrl} alt={service.name}/>
           <p>{service.place}</p>
           <p>{service.description}</p>
           <p>{service.price}</p>
@@ -80,7 +80,7 @@ function ServiceDetailsPage (props) {
         <ReviewCard key={review._id} {...review} /> 
       ))} 
       
-      <ReviewList/>
+      {/* <ReviewList/> */}
    
 
    <button onClick={deleteService}>Delete</button>

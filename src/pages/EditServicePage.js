@@ -13,6 +13,7 @@ function EditServicePage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [category, setCategory] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
 
 
   const { serviceId } = useParams();
@@ -36,6 +37,7 @@ function EditServicePage() {
         setName(oneService.name);
         setEmail(oneService.email);
         setCategory(oneService.category)
+        setImageUrl(oneService.imageUrl)
       })
       .catch((error) => console.log(error));
     
@@ -44,7 +46,7 @@ function EditServicePage() {
   // update Button preperation
   const updateService = (e) => {
     e.preventDefault();
-    const requestBody = { title, description, place, date, price, name, email, category };
+    const requestBody = { title, description, place, date, price, name, email, category, imageUrl };
     servicesService.updateService(serviceId, requestBody)
       .then((response) => {
         const oneService = response.data;
@@ -53,6 +55,23 @@ function EditServicePage() {
       .catch((error) => console.log(error));
   };
  
+  const handleFileUpload = (e) => {
+    // console.log("The file to be uploaded is: ", e.target.files[0]);
+    const uploadData = new FormData();
+
+    // imageUrl => this name has to be the same as in the model since we pass
+    // req.body to .create() method when creating a new movie in '/api/movies' POST route
+    uploadData.append("imageUrl", e.target.files[0]);
+
+    servicesService
+      .uploadImage(uploadData)
+      .then(response => {
+        // console.log("response is: ", response);
+        // response carries "fileUrl" which we can use to update the state
+        setImageUrl(response.fileUrl);
+      })
+      .catch(err => console.log("Error while uploading the file: ", err));
+  };
   
   
   return (
@@ -80,6 +99,8 @@ function EditServicePage() {
             onChange={(e) => setTitle(e.target.value)}
           />
         </label>
+
+        <input type="file" onChange={(e) => handleFileUpload(e)} />
 
         <label>Description:
           <textarea

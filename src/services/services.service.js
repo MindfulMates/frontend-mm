@@ -5,13 +5,14 @@ class ServicesService {
     this.api = axios.create({
       baseURL: process.env.REACT_APP_SERVER_URL || 'http://localhost:5005'
     });
- 
+
+
     // Automatically set JWT token in the headers for every request
     this.api.interceptors.request.use(config => {
       // Retrieve the JWT token from the local storage
       const storedToken = localStorage.getItem('authToken');
- 
-      if (storedToken) {
+      
+       if (storedToken) {
         config.headers = { Authorization: `Bearer ${storedToken}` };
       }
  
@@ -19,6 +20,11 @@ class ServicesService {
     });
   }
  
+  errorHandler = (err) => {
+    throw err;
+  };
+
+
   // POST /api/newservice
   createService = requestBody => {
     return this.api.post('/api/newservice', requestBody);
@@ -28,7 +34,13 @@ class ServicesService {
   getAllServices = () => {
     return this.api.get('/api/services');
   };
- 
+
+  uploadImage = (file) => {
+    return this.api.post("/api/upload", file)
+      .then(res => res.data)
+      .catch(this.errorHandler);
+  };
+
   // GET /api/services/:id
   getService = id => {
     return this.api.get(`/api/services/${id}`);

@@ -12,7 +12,7 @@ function AddReview(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const requestBody = { review, description, friendly };
+    const requestBody = { review, description, friendly, serviceId: props.serviceId };
    
     // Get the token from the localStorage
     const storedToken = localStorage.getItem('authToken');
@@ -29,9 +29,9 @@ function AddReview(props) {
       setReview("");
       setDescription("");
       setFriendly("");
-      // props.refreshReviews();
+      props.refreshService();
       // navigate("/services")
-      window.location.reload(true)
+      // window.location.reload(true)
     })
       .catch((error) => console.log(error));
   };
@@ -41,9 +41,12 @@ function AddReview(props) {
       <h3>Add Review</h3>
      
       <form onSubmit={handleSubmit}>
-        <label>Review:</label>
+        <label>Rate the service 1 worse - 10 awesome?:</label>
         <input
           type="Number"
+          min={1}
+          max={10}
+          // step={0.5}
           name="review"
           value={review}
           onChange={(e) => setReview(e.target.value)}
@@ -58,12 +61,14 @@ function AddReview(props) {
         />
 
         <label>Friendly:</label>
-        <textarea
-          type="boolean"
+        <select
           name="friendly"
           value={friendly}
           onChange={(e) => setFriendly(e.target.value)}
-        />
+        >
+          <option value='true'>Yes</option>
+          <option value='false'>No</option>
+        </select>
  
         <button type="submit">Submit</button>
       </form>

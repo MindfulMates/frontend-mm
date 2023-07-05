@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import servicesService from "../services/services.service"
 
 
 function AddService(props) {
@@ -12,6 +13,7 @@ function AddService(props) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [category, setCategory] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
 
 
   const navigate = useNavigate()
@@ -23,7 +25,7 @@ function AddService(props) {
     // We need the service id when creating the new review
     const { serviceId } = props;
     // Create an object representing the body of the POST request
-    const requestBody = { title, description, place, date, price, name, email, category, serviceId };
+    const requestBody = { title, description, place, date, price, name, email, category, imageUrl, serviceId };
 
     const storesToken = localStorage.getItem("authToken")
 
@@ -37,8 +39,9 @@ function AddService(props) {
         setDate("");
         setPrice("");
         setName("");
-        setEmail("")
-        setCategory("")
+        setEmail("");
+        setCategory("");
+        setImageUrl("")
 
         // Invoke the callback function coming through the props
         // from the ServiceDetailsPage, to refresh the service details
@@ -49,6 +52,27 @@ function AddService(props) {
   };
 
 
+
+  const handleFileUpload = (e) => {
+    // console.log("The file to be uploaded is: ", e.target.files[0]);
+    const uploadData = new FormData();
+
+    // imageUrl => this name has to be the same as in the model since we pass
+    // req.body to .create() method when creating a new movie in '/api/movies' POST route
+    uploadData.append("imageUrl", e.target.files[0]);
+
+    servicesService
+      .uploadImage(uploadData)
+      .then(response => {
+        // console.log("response is: ", response);
+        // response carries "fileUrl" which we can use to update the state
+        setImageUrl(response.fileUrl);
+      })
+      .catch(err => console.log("Error while uploading the file: ", err));
+  };
+
+
+
   return (
     <div className="AddService">
       <h3>Add New Service</h3>
@@ -57,7 +81,7 @@ function AddService(props) {
 
         <label>Category:
           <select onChange={(e) => setCategory(e.target.value)}>
-          <option value="" selected disabled> select an option</option>
+            <option value="" selected disabled> select an option</option>
             <option value="Yoga"> Yoga 🧘</option>
             <option value="Meditation"> Meditation 💆‍♀️</option>
             <option value="Massage"> Massage 💆‍♀️</option>
@@ -65,7 +89,9 @@ function AddService(props) {
             <option value="Other"> Other ❔</option>
           </select>
         </label>
-        
+
+        <input type="file" onChange={(e) => handleFileUpload(e)} />
+
         <label>Title:
           <input
             type="text"
