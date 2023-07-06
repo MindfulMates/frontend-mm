@@ -1,28 +1,44 @@
 import { useContext } from "react";
 import { AuthContext } from "../context/auth.context";
 
+// import { Link } from "react-router-dom";
+
+
 
 function UserProfilePage() {
 
-    const {
-        isLoggedIn,
-        user,
-        logOutUser
-    } = useContext(AuthContext);
+  const {
+    isLoggedIn,
+    user,
+    logOutUser
+  } = useContext(AuthContext);
 
-    // get.findUserbyId()
+  // get.findUserbyId()
 
-    return (
-      <div>
-        <h1>Your Profile!</h1>
-        <span>{user && user.name}</span>
-        <br/>
-    
-        <span>{user && user.email}</span>
-        <br/>
+  return (
 
-     </div>
-    );
-  }
-   
-  export default UserProfilePage;
+    <>
+
+      <div className="titel">
+        <h1>Your profile</h1>
+      </div>
+
+      <div className="Forms">
+        <span>Username: {user && user.name}</span>
+        <br />
+
+        <span>E-Mail: {user && user.email}</span>
+        <br />
+
+      </div>
+
+      {/* <Link to={/profilepage/edit/}>
+                  <button className="button-overlay-edit">Edit</button>
+                </Link> */}
+
+    </>
+
+  );
+}
+
+export default UserProfilePage;

@@ -41,10 +41,19 @@ function HomePage() {
 
       <footer>
         <Row xs={2} md={4} className="footer-row">
-          <p><h5>Contact</h5> Mobile +44 3127898982 mindfulmates@happy.com <br /> Instagram</p>
-          <p><h5>About us</h5> values <br /> locations <br /> people</p>
-          <p><h5>B2B</h5>  become partner </p>
-          <p><h5>Career</h5> developer wanted <br /> easy apply</p>
+          <p><h5>Socials</h5> 
+          <img className="HomePage-Icon4" src="https://res.cloudinary.com/dzkmmidp3/image/upload/v1688644296/1161953_instagram_icon_ycod5q.png" alt="instagram" />
+          <img className="HomePage-Icon4" src="https://res.cloudinary.com/dzkmmidp3/image/upload/v1688644313/7024783_tiktok_social_media_icon_u3jfgj.png" alt="tiktok" />
+          <img className="HomePage-Icon4" src="https://res.cloudinary.com/dzkmmidp3/image/upload/v1688644380/843786_whatsapp_icon_gik4ao.png" alt="whatsapp" />        
+          </p>
+          <p><h5>About us</h5> ©️ developed by <br /> Nuno & Carolin </p>
+          <p><h5>Get in touch</h5>  
+          <img className="HomePage-Icon4" src="https://res.cloudinary.com/dzkmmidp3/image/upload/v1688644296/5282542_linkedin_network_social_network_linkedin_logo_icon_ndkulb.png" alt="linkedin" /> <br/>
+             <a className="Home-Link" href="https://www.linkedin.com/in/nunojsmonteiro/">Contact Nuno</a>
+              <br/>
+              <a className="Home-Link" href="https://www.linkedin.com/in/carolin-klose/">Contact Carolin</a>
+          </p>
+          <p><h5>Career</h5> join ironhack to learn <br />  how we developed the app <br />  and become a developer</p>
         </Row >
       </footer>
 

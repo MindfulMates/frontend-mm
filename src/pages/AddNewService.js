@@ -22,7 +22,6 @@ function AddNewService() {
   
   return (
     <div className="AddNewService">
-        <p>Add New Service</p>
       
       <AddService refreshServices={getAllServices} />
       

@@ -20,7 +20,7 @@ function ServiceListPage() {
     getAllServices();
   }, []);
 
-  console.log(services)
+
 
   return (
     <>

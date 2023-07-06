@@ -1,31 +1,33 @@
 import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
- 
-import authService from "./../services/auth.service"; 
- 
- 
+
+import authService from "./../services/auth.service";
+import Form from 'react-bootstrap/Form';
+import Row from "react-bootstrap/Row";
+
+
 function LoginPage(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState(undefined);
-  
+
   const navigate = useNavigate();
-  
+
   /*  UPDATE - get authenticateUser from the context */
   const { storeToken, authenticateUser } = useContext(AuthContext);
- 
-  
+
+
   const handleEmail = (e) => setEmail(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
- 
-  
+
+
   const handleLoginSubmit = (e) => {
     e.preventDefault();
     const requestBody = { email, password };
- 
- 
-    authService.login(requestBody) 
+
+
+    authService.login(requestBody)
       .then((response) => {
         console.log("JWT token", response.data.authToken);
         storeToken(response.data.authToken);
@@ -33,60 +35,68 @@ function LoginPage(props) {
         navigate("/");
       })
       .catch((error) => {
-      	const errorDescription = error.response.data.message;
-      	setErrorMessage(errorDescription);
-    	})
+        const errorDescription = error.response.data.message;
+        setErrorMessage(errorDescription);
+      })
   };
- 
-  
+
+
   return (
-    <div className="LoginPage">
-      <h1>Login</h1>
- 
-      <form onSubmit={handleLoginSubmit}>
-        <label>Email:</label>
-        <input
-          type="email"
-          name="email"
-          value={email}
-          onChange={handleEmail}
-        />
- 
-        <label>Password:</label>
-        <input
-          type="password"
-          name="password"
-          value={password}
-          onChange={handlePassword}
-        />
- 
-        <button type="submit">Login</button>
-      </form>
-      { errorMessage && <p className="error-message">{errorMessage}</p> }
- 
-      <p>Don't have an account yet?</p>
-      <Link to={"/signup"}> Sign Up</Link>
-    </div>
+    <>
+      <div className="titel">
+        <h1>Happy to see you again...</h1>
+      </div>
+
+      <div className="LoginPage Forms">
+
+        <Row xs={1} md={2} className="HomePage-rows1">
+          <div>
+
+            <Form className="add-review-form" onSubmit={handleLoginSubmit}>
+              <h4>Log in</h4>
+
+              <Form.Group className="mb-3">
+                <Form.Label>E-Mail</Form.Label>
+                <Form.Control
+                  type="email"
+                  name="email"
+                  value={email}
+                  onChange={handleEmail}
+                />
+              </Form.Group>
+
+              <Form.Group className="mb-3">
+                <Form.Label>Password</Form.Label>
+                <Form.Control
+                  type="password"
+                  name="password"
+                  value={password}
+                  onChange={handlePassword}
+                />
+              </Form.Group>
+
+              <button className="button-overlay-review" type="submit">
+                Log In
+              </button>
+            </Form>
+
+            {errorMessage && <p className="error-message">{errorMessage}</p>}
+
+            <p>Don't have an account yet?</p>
+            <Link to={"/signup"}>
+              <button className="button-overlay-detail" type="submit">Sign Up</button>
+            </Link>
+
+          </div>
+
+          <div>
+            <img className="HomePage-Icon2" src="https://res.cloudinary.com/dzkmmidp3/image/upload/v1688584803/Bild3_ftiwnv.png" alt="logo" />
+          </div>
+        </Row >
+
+      </div>
+    </>
   )
 }
- 
+
 export default LoginPage;
-
-
-// api.interceptors.request.use(
-//     async (config) => {
-//       const token = localStorage.getItem("authToken")
-//       const parsedToken = JSON.parse(token || '')
-//       console.log(parsedToken)
-  
-//       if(parsedToken){
-//         config.headers.Authorization = `Bearer ${parsedToken.token}`
-  
-//         config.headers["Access-Control-Allow-Origin"] = "*"
-//       }
-//       return config
-//     },
-//     (error) => {
-//       return error
-//     }
-//   )
