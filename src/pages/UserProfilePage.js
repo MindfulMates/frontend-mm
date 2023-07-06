@@ -18,11 +18,15 @@ function UserProfilePage() {
         <h1>Your profile</h1>
       </div>
 
-      <div className="Forms">
-        <span>Username: {user && user.name}</span>
+      <div className="User">
+        <p className="User-title">Username:</p>
+        <p className="User-content">{user && user.name}</p>
+
         <br />
 
-        <span>E-Mail: {user && user.email}</span>
+        <p className="User-title">E-Mail:</p>
+        <p className="User-content">{user && user.email}</p>
+
         <br />
 
       </div>

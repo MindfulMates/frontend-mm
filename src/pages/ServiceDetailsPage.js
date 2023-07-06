@@ -75,9 +75,9 @@ function ServiceDetailsPage(props) {
 
   return (
     <>
-      <div className="titel">
+      {/* <div className="titel">
         <h1>Time to calm down...</h1>
-      </div>
+      </div> */}
       <div className="ServiceDetails">
 
         <Row xs={1} md={2} className="HomePage-rows1">
@@ -98,19 +98,18 @@ function ServiceDetailsPage(props) {
 
             {service && (
               <div className="detail-page-inner-text">
-                <p>Description:</p>
+                <p className="detail-styling">What to expect from the {service.category} Service?</p>
                 <p>{service.description}</p>
+                <br />
 
-                <p>Starting at {service.price} EUR</p>
+                <p>💰 from {service.price} EUR</p>
 
-                <p>Category: {service.category}</p>
-
-                <p>⚑ Location: {service.place}</p>
-                <p>🕒 Service hours: {service.date}</p>
+                <p>📌  {service.place}</p>
+                <p>🕒 Next available slot: {service.date}</p>
 
                 <br />
-                <p>Your Mate: {service.name}</p>
-                <p>Ask for booking: {service.email}</p>
+                <p className="detail-styling-contact">Your Mate: {service.name}</p>
+                <p className="detail-styling-contact">Ask for booking: {service.email}</p>
               </div>
             )}
           </div>

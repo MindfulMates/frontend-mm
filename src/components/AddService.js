@@ -175,7 +175,7 @@ function AddService(props) {
         </div>
 
         <div>
-          <img className="HomePage-Icon2" src="https://res.cloudinary.com/dzkmmidp3/image/upload/v1688584803/Bild3_ftiwnv.png" alt="logo" />
+          <img className="Form-Img" src="https://res.cloudinary.com/dzkmmidp3/image/upload/v1688584803/Bild3_ftiwnv.png" alt="logo" />
         </div>
       </Row >
 

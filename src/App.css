@@ -154,7 +154,7 @@
     transform: translateY(0);
   }
   100% {
-    transform: translateY(-10px); /* Adjust the value to control the movement distance */
+    transform: translateY(-10px); 
   }
 }
 
@@ -231,15 +231,19 @@ width: 10rem;
 
 .detail-page-inner-text {
   padding-right: 6rem;
+  background-color:#a9f6cd;
+  padding: 2rem;
+  border-radius: 8%;
 }
 
-/* CHECK THE PICTURE */
+.detail-styling {
+  font-weight: bold;
+  color: rgb(83, 82, 82);
+}
 
-.detail-page-img {
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* justify-content: center; */
-  /* align-items: center; */
+.detail-styling-contact {
+  color: #8616e3;
+  font-weight: bold;
 }
 
 
@@ -255,8 +259,6 @@ width: 10rem;
   /* height: 100%; */
   /* padding: 20px; */
 }
-
-
 
 .ServiceListPage {
 padding-left: 5rem;
@@ -324,6 +326,9 @@ outline: none;
   margin-bottom: 2rem;
   background-color: #8616e3;
   border-radius: 8%;
+  color: white;
+  line-height: 0.5;
+
 }
 
 .add-review-form h4 {
@@ -356,3 +361,20 @@ line-height: 0.5;
   padding-left: 5rem;
 }
 
+.User {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  padding-left: 10%;
+  padding-right: 60%;
+  }
+
+  .User-title {
+    color: grey;
+    font-weight: bold;
+  }
+
+  .User-content {
+    color: #8616e3;
+    font-weight: bold;
+    font-size: large;  
+  }
