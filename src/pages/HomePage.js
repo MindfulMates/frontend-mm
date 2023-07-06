@@ -1,8 +1,16 @@
 import Row from "react-bootstrap/Row";
 import { Link } from "react-router-dom";
-
+import { useContext } from "react";
+import { AuthContext } from "../context/auth.context";
 
 function HomePage() {
+
+  const {
+    isLoggedIn,
+    user,
+    logOutUser
+} = useContext(AuthContext);
+
   return (
     <>
 
@@ -24,6 +32,8 @@ function HomePage() {
           <h5>life was never smoother before...</h5>
         </Row>
 
+        {!isLoggedIn && (
+
         <Row xs={1} md={2} className="HomePage-rows2">
           <div>
             <h2>Reduce your stress level quickly or don’t get stressed anyways</h2>
@@ -36,6 +46,7 @@ function HomePage() {
             <img className="HomePage-Icon3" src="https://res.cloudinary.com/dzkmmidp3/image/upload/v1688589650/people_kofrrt.png" alt="logo" />
           </div>
         </Row>
+        )}
 
       </div>
 

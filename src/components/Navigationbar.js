@@ -54,10 +54,12 @@ function Navigationbar() {
                     )}
 
                     {!isLoggedIn && (
-                        <>
+                        <><p className="nav-button-around">
                             <Link to="/signup"> <button class="button-overlay">Sign Up</button> </Link>
-                            <Link to="/login"> <button class="button-overlay">Login</button> </Link>
-
+                        </p>
+                            <p className="nav-button-around">
+                                <Link to="/login"> <button class="button-overlay">Login</button> </Link>
+                            </p>
 
                         </>
                     )}

@@ -65,9 +65,8 @@ function AddReview(props) {
         <Form.Label>Was your Mate friendly?</Form.Label>
         <Form.Select onChange={(e) => setFriendly(e.target.value)}>
           <option value="disabled" selected > select an option</option>
-          <option value='true'>Yes</option>
-          <option value='false'>No</option>
-
+          <option value='Oh yes!'>Oh yes!</option>
+          <option value='Not really'>Not really</option>
         </Form.Select>
       </Form.Group>
 
