@@ -18,58 +18,52 @@ function Navigationbar() {
 
     return (
 
-        <Navbar expand="lg" className="bg-body-tertiary">
+        <Navbar expand="lg" className="NavOptics">
 
-      <Container>
-        <img src="../public/logo.png" alt="logo"/>
+            <Container>
+                <a className="navbar-brand" href="/">
+                    <img src="https://res.cloudinary.com/dzkmmidp3/image/upload/v1688597060/Bild9_xkbh8x.png" alt="logo" />
+                </a>
 
-        <Navbar.Toggle aria-controls="basic-navbar-nav"/>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="me-auto navbar-collapse">
 
+                        {isLoggedIn && (
+                            <>
+                                <span>Hi {user && user.name}😌</span>
+                            </>
+                        )}
 
-        <Navbar.Collapse id="basic-navbar-nav">
+                        <Nav.Link href="/services">Services</Nav.Link>
+                        <Nav.Link href="/newservice">Add Service</Nav.Link>
 
-          <Nav className="me-auto">
+                        {isLoggedIn && (
+                            <>
+                                <Nav.Link href="/UserProfilePage">Profile</Nav.Link>
+                            </>
+                        )}
 
-          {isLoggedIn && (
-                <>
-                    <span>Hi {user && user.name}😀 </span>
-                </>
-            )}
-
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/services">Services</Nav.Link>
-            <Nav.Link href="/newservice">Add Service</Nav.Link>
-
-            {isLoggedIn && (
-                <>
-            <Nav.Link href="/UserProfilePage">Profile</Nav.Link>
-            </>
-             )}
-
-          </Nav>
+                    </Nav>
 
 
-          {isLoggedIn && (
-                <>
+                    {isLoggedIn && (
+                        <>
+                            <button class="button-overlay-logout" onClick={logOutUser}>Logout</button>
+                        </>
+                    )}
 
-                <Button variant="primary" onClick={logOutUser}>Logout</Button>
-
-                </>
-            )}
-
-            {!isLoggedIn && (
-                <>
-                    <Link to="/signup"> <Button variant="primary">Sign Up</Button> </Link>
-                    <Link to="/login"> <Button variant="primary">Login</Button> </Link>
-                </>
-            )}
+                    {!isLoggedIn && (
+                        <>
+                            <Link to="/signup"> <button class="button-overlay">Sign Up</button> </Link>
+                            <Link to="/login"> <button class="button-overlay">Login</button> </Link>
 
 
+                        </>
+                    )}
 
-
-        </Navbar.Collapse>
-      </Container>
-
+                </Navbar.Collapse>
+            </Container>
         </Navbar>
 
     );

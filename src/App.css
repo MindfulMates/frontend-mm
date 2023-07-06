@@ -1,53 +1,245 @@
-.App {
-  text-align: center;
+
+.navbar-brand img {
+  max-height: auto;
+  max-width: 22vw;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.titel {
+  background-color: #a9f6cd;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  padding-left: 10%;
+  padding-right: 10%;
+  color: #8616e3;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbar-collapse {
+  justify-content: flex-end;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.button-overlay {
+  background-color: #178066;
+  font-weight: bold;
   color: white;
+  border: 0;
+  border-radius: 8%;
+  margin: 5%;
+  height: 5vh;  
+  font-size: 80%;
+  font-weight: 600;
 }
 
-.App-link {
-  color: #61dafb;
+.button-overlay-logout {
+  background-color: #178066;
+  font-weight: bold;
+  color: white;
+  border: 0;
+  border-radius: 8%;
+  height: 5vh;  
+  font-size: 80%;
+  font-weight: 600;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.button-overlay-card {
+  background-color: #8616e3;
+  font-weight: bold;
+  color: white;
+  border: 0;
+  border-radius: 8%;
+  height: 5vh;  
+  font-size: 80%;
+  font-weight: 600;
+}
+
+.button-overlay-detail {
+  background-color: #8616e3;
+  font-weight: bold;
+  color: white;
+  border: 0;
+  border-radius: 8%;
+  margin-right: 2%;
+  height: 5vh;  
+  font-size: 80%;
+  font-weight: 600;
+}
+
+.button-overlay-home {
+  background-color: #8616e3;
+  font-weight: bold;
+  color: white;
+  border: 0;
+  border-radius: 12%;
+  height: 6vh;  
+  width: 9vw;
+  font-weight: 00;
+  float: right;
+  margin-right: 4rem;
+}
+
+.button-overlay-edit {
+  background-color: #8616e3;
+  font-weight: bold;
+  color: white;
+  border: 0;
+  border-radius: 8%;
+  margin-right: 2%;
+  height: 5vh;  
+  font-size: 80%;
+  font-weight: 600;
+  float: right;
+}
+
+.button-overlay-review {
+  background-color:#a9f6cd;
+  font-weight: bold;
+  color:#8616e3;
+  border: 0;
+  border-radius: 8%;
+  height: 5vh;  
+  font-size: 80%;
+  font-weight: 600;
+}
+
+.button-overlay:hover {
+  background-color: #1fab89;
+  color:#511780
+}
+
+.button-overlay-container {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1;
+}
+
+.button-overlay-category {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.NavOptics {
+ background-color:#a9f6cd;
+ color: #178066;
+ font-weight: bold;
+}
+
+.HomePage {
+  padding-left: 8rem;
+  padding-right: 8rem;
+  color: #8616e3;
+  background-color: #a9f6cd;
+}
+
+.HomePage-Icon1 {
+  height: 30rem;
+  object-fit:contain
+}
+
+.HomePage-Icon2 {
+  height: 20rem;
+  object-fit:contain;
+  padding-bottom: 2rem;
+  animation: playerAnimate 1s infinite;
+}
+
+@keyframes playerAnimate {
+  0% {
+    transform: translateY(0);
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    transform: translateY(-10px); /* Adjust the value to control the movement distance */
   }
+}
+
+.HomePage-Icon3 {
+  height: 20rem;
+  object-fit:contain;
+  padding-bottom: 2rem;
+}
+
+.HomePage-rows1 {
+  padding-top: 1rem;
+}
+
+.HomePage-rows2 {
+  padding-top: 5rem;
+}
+
+.HomePage-start-text {
+  padding-top: 7em;
+}
+
+.HomePage-start-text h1 {
+font-weight: 700;
+}
+
+footer {
+  background-color: #8616e3;
+  padding-left: 8rem;
+  padding-right: 8rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  color:#a9f6cd;
+  font-size: small;
+}
+
+.footer-row {
+text-align: center;
+}
+
+.detail-page {
+width: 10rem;
+}
+
+.ServiceDetails h4 {
+  color: #8616e3;
+}
+
+.detail-page-headline {
+  padding-bottom: 2rem;
+}
+
+.detail-page-infos {
+  margin-bottom: 2rem;
+  line-height: 1;
+}
+
+.detail-page-inner-text {
+  padding-right: 6rem;
+}
+
+/* CHECK THE PICTURE */
+
+.detail-page-img {
+  background-color: #8616e3;
+  width: 100%;
+}
+
+.full-width-image {
+  width: 100%;
+}
+
+
+
+.ServiceListPage {
+padding-left: 5rem;
+padding-right: 5rem;
+padding-top: 2rem;
+background-color:#a9f6cd
+}
+
+.ServiceListPage h4 {
+  color: #8616e3;
 }
 
 .ServiceCardRow {
-  padding-left: 5%;
-  padding-right: 5%;
   padding-top: 3%;
   padding-bottom: 3%;
 }
-
-/* .ServiceCardCol {
-  padding-left: 10%;
-  padding-right: 10%;
-} */
 
 .ServiceCardBody {
   line-height: 1;
@@ -55,9 +247,61 @@
   padding-right: 10%;
 }
 
-.ServiceCardImg {
-  height: 10rem;
-  width: auto;
-  object-fit: contain;
+.ServiceCardCol {
+  margin-bottom: 1rem;
 }
 
+.ServiceCardImg {
+  height: 10rem;
+  object-fit: cover;
+}
+
+.ServiceCArd-location {
+color: rgb(89, 88, 88);
+font-size: smaller;
+}
+
+.ServiceCArd-price {
+  font-weight: bold;
+  font-size: smaller;
+  }
+
+.ServiceDetails {
+padding-left: 10%;
+padding-right: 10%;
+margin-top: 2rem;
+margin-bottom: 3rem;
+}
+
+.ServiceDetails img {
+  height: 10rem;
+  width: auto;
+}
+
+.Card {
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+outline: none;
+}
+
+.add-review-form {
+  padding-top: 1rem;
+  padding-bottom: 3rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  background-color: #8616e3;
+  border-radius: 8%;
+}
+
+.add-review-form h4 {
+  color:#a9f6cd;
+}
+
+.ReviewCardBody {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-bottom: 1rem;
+}
+
+.ReviewCardBody h5 {
+  color: #8616e3;
+}
