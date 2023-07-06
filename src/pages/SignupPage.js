@@ -45,7 +45,7 @@ function SignupPage(props) {
 
       <div className="SignupPage Forms">
 
-      <Row xs={1} md={2} className="HomePage-rows1">
+        <Row xs={1} md={2} className="HomePage-rows1">
           <div>
 
             <Form className="add-review-form" onSubmit={handleSignupSubmit}>
@@ -54,30 +54,30 @@ function SignupPage(props) {
               <Form.Group className="mb-3">
                 <Form.Label>Username</Form.Label>
                 <Form.Control
-            type="text"
-            name="name"
-            value={name}
-            onChange={handleName}
+                  type="text"
+                  name="name"
+                  value={name}
+                  onChange={handleName}
                 />
               </Form.Group>
 
               <Form.Group className="mb-3">
                 <Form.Label>E-Mail</Form.Label>
                 <Form.Control
-            type="email"
-            name="email"
-            value={email}
-            onChange={handleEmail}
+                  type="email"
+                  name="email"
+                  value={email}
+                  onChange={handleEmail}
                 />
               </Form.Group>
 
               <Form.Group className="mb-3">
                 <Form.Label>Password</Form.Label>
                 <Form.Control
-            type="password"
-            name="password"
-            value={password}
-            onChange={handlePassword}
+                  type="password"
+                  name="password"
+                  value={password}
+                  onChange={handlePassword}
                 />
               </Form.Group>
 
@@ -96,11 +96,11 @@ function SignupPage(props) {
           </div>
 
           <div>
-            <img className="HomePage-Icon2" src="https://res.cloudinary.com/dzkmmidp3/image/upload/v1688584803/Bild3_ftiwnv.png" alt="logo" />
+            <img className="Form-Img" src="https://res.cloudinary.com/dzkmmidp3/image/upload/v1688584803/Bild3_ftiwnv.png" alt="logo" />
           </div>
         </Row >
 
-        </div>
+      </div>
     </>
 
   )

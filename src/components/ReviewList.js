@@ -4,6 +4,7 @@ import ReviewCard from "./ReviewCard";
 
 
 function ReviewList() {
+
   const [reviews, setReviews] = useState([]);
 
   const getAllReviews = () => {
@@ -23,7 +24,6 @@ function ReviewList() {
     <div className="ReviewList">
 
       <h3>Other mates rated the service:</h3>
-
 
       {reviews.map((review) => (
         <ReviewCard key={review._id} {...review} />

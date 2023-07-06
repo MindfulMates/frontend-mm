@@ -2,23 +2,22 @@ import Card from 'react-bootstrap/Card';
 import Col from "react-bootstrap/Col";
 import { MdStar } from 'react-icons/md';
 
+
 function ReviewCard({ review, description, friendly }) {
 
-
-// Render star rating
-const renderStarRating = () => {
-  const stars = [];
-  for (let i = 0; i < review; i++) {
-    stars.push(<MdStar key={i} />);
-  }
-  return stars;
-};
-
+  // Render star rating
+  const renderStarRating = () => {
+    const stars = [];
+    for (let i = 0; i < review; i++) {
+      stars.push(<MdStar key={i} />);
+    }
+    return stars;
+  };
 
 
-    return (
+  return (
 
-      <Col>
+    <Col>
 
       <Card className="ReviewCardBody">
         <Card.Body>
@@ -28,9 +27,8 @@ const renderStarRating = () => {
         </Card.Body>
       </Card>
 
-      </Col>
-    );
-  }
-  
-  export default ReviewCard;
-  
+    </Col>
+  );
+}
+
+export default ReviewCard;

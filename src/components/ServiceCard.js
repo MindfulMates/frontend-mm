@@ -2,15 +2,11 @@ import { Link } from "react-router-dom";
 import Card from 'react-bootstrap/Card';
 import Col from "react-bootstrap/Col";
 import { MdStar } from 'react-icons/md';
-import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 
 function ServiceCard({ title, description, place, date, price, name, email, category, imageUrl, _id, review }) {
   const { serviceId } = useParams();
-
-
-
 
   // Calculate average rating
   const calculateAverageRating = () => {
@@ -18,7 +14,6 @@ function ServiceCard({ title, description, place, date, price, name, email, cate
       let sum = 0;
       review.forEach((elm) => {
         sum += elm.review;
-        console.log(sum, 'SUM')
       });
       return sum / review.length;
     }
@@ -31,7 +26,6 @@ function ServiceCard({ title, description, place, date, price, name, email, cate
     const stars = [];
     for (let i = 0; i < averageRating; i++) {
       stars.push(<MdStar key={i} />);
-      console.log('Stars', stars)
     }
     return stars;
   };
@@ -54,7 +48,13 @@ function ServiceCard({ title, description, place, date, price, name, email, cate
             <Card.Title>{title}</Card.Title>
             <Card.Text>
               <span className="stars-styling">
-                {calculateAverageRating().toFixed(1)} {renderStars()} ({review && <span>{review.length}</span>} Reviews)
+                {review && review.length > 0 ? (
+                  <>
+                    {calculateAverageRating().toFixed(1)} {renderStars()} ({review.length} Reviews)
+                  </>
+                ) : (
+                  "No reviews yet"
+                )}
               </span>
             </Card.Text>
             <Card.Text className="ServiceCArd-price">starting at {price}€</Card.Text>

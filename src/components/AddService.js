@@ -103,72 +103,72 @@ function AddService(props) {
               />
             </Form.Group>
 
-              <Form.Group className="mb-3">
-                <Form.Label>Description</Form.Label>
-                <Form.Control
-                  type="text"
-                  name="description"
-                  value={description}
-                  onChange={(e) => setDescription(e.target.value)}
-                />
-              </Form.Group>
+            <Form.Group className="mb-3">
+              <Form.Label>Description</Form.Label>
+              <Form.Control
+                type="text"
+                name="description"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+              />
+            </Form.Group>
 
-              <Form.Group className="mb-3">
-                <Form.Label>Location</Form.Label>
-                <Form.Control
-                  type="text"
-                  name="place"
-                  value={place}
-                  onChange={(e) => setPlace(e.target.value)}
-                />
-                <Form.Text className="text-muted">
-                  Let people know if you do home visits or have a studio!
-                </Form.Text>
-              </Form.Group>
+            <Form.Group className="mb-3">
+              <Form.Label>Location</Form.Label>
+              <Form.Control
+                type="text"
+                name="place"
+                value={place}
+                onChange={(e) => setPlace(e.target.value)}
+              />
+              <Form.Text className="text-muted">
+                Let people know if you do home visits or have a studio!
+              </Form.Text>
+            </Form.Group>
 
-              <Form.Group className="mb-3">
-                <Form.Label>Service hours</Form.Label>
-                <Form.Control
-                  type="date"
-                  name="date"
-                  value={date}
-                  onChange={(e) => setDate(e.target.value)}
-                />
-              </Form.Group>
+            <Form.Group className="mb-3">
+              <Form.Label>Service hours</Form.Label>
+              <Form.Control
+                type="date"
+                name="date"
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+              />
+            </Form.Group>
 
-              <Form.Group className="mb-3">
-                <Form.Label>Price</Form.Label>
-                <Form.Control
-                  type="Number"
-                  name="price"
-                  value={price}
-                  onChange={(e) => setPrice(e.target.value)}
-                />
-              </Form.Group>
+            <Form.Group className="mb-3">
+              <Form.Label>Price</Form.Label>
+              <Form.Control
+                type="Number"
+                name="price"
+                value={price}
+                onChange={(e) => setPrice(e.target.value)}
+              />
+            </Form.Group>
 
-              <Form.Group className="mb-3">
-                <Form.Label>Your name</Form.Label>
-                <Form.Control
-                  type="text"
-                  name="name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                />
-              </Form.Group>
+            <Form.Group className="mb-3">
+              <Form.Label>Your name</Form.Label>
+              <Form.Control
+                type="text"
+                name="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+            </Form.Group>
 
-              <Form.Group className="mb-3">
-                <Form.Label>Your email</Form.Label>
-                <Form.Control
-                  type="text"
-                  name="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </Form.Group>
+            <Form.Group className="mb-3">
+              <Form.Label>Your email</Form.Label>
+              <Form.Control
+                type="text"
+                name="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </Form.Group>
 
-              <button className="button-overlay-review" type="submit">
-                Add Service
-              </button>
+            <button className="button-overlay-review" type="submit">
+              Add Service
+            </button>
 
           </Form>
 

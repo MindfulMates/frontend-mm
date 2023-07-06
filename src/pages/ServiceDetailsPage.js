@@ -11,8 +11,8 @@ import { MdStar } from "react-icons/md";
 
 
 
-
 function ServiceDetailsPage(props) {
+
   const [service, setService] = useState(null);
   const { serviceId } = useParams();
 
@@ -49,7 +49,7 @@ function ServiceDetailsPage(props) {
   }, []);
 
 
-    // Calculate average rating
+  // Calculate average rating
   const calculateAverageRating = () => {
     if (service && service.review.length > 0) {
       let sum = 0;
@@ -61,15 +61,15 @@ function ServiceDetailsPage(props) {
     return 0;
   };
 
-    // Render star icons based on average rating
-    const renderStars = () => {
-      const averageRating = calculateAverageRating();
-      const stars = [];
-      for (let i = 0; i < averageRating; i++) {
-        stars.push(<MdStar key={i} />);
-      }
-      return stars;
-    };
+  // Render star icons based on average rating
+  const renderStars = () => {
+    const averageRating = calculateAverageRating();
+    const stars = [];
+    for (let i = 0; i < averageRating; i++) {
+      stars.push(<MdStar key={i} />);
+    }
+    return stars;
+  };
 
 
 
@@ -88,10 +88,10 @@ function ServiceDetailsPage(props) {
                 <>
                   <h4>{service.title}</h4>
                   <div>
-                  <span className="stars-styling">
-                  {calculateAverageRating().toFixed(1)} {renderStars()} ({service && service.review.length} Reviews)
+                    <span className="stars-styling">
+                      {calculateAverageRating().toFixed(1)} {renderStars()} ({service && service.review.length} Reviews)
                     </span>
-                    </div>
+                  </div>
                 </>
               )}
             </div>

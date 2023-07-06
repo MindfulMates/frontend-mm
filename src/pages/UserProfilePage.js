@@ -1,9 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../context/auth.context";
 
-// import { Link } from "react-router-dom";
-
-
 
 function UserProfilePage() {
 
@@ -13,12 +10,10 @@ function UserProfilePage() {
     logOutUser
   } = useContext(AuthContext);
 
-  // get.findUserbyId()
 
   return (
 
     <>
-
       <div className="titel">
         <h1>Your profile</h1>
       </div>
@@ -31,11 +26,6 @@ function UserProfilePage() {
         <br />
 
       </div>
-
-      {/* <Link to={/profilepage/edit/}>
-                  <button className="button-overlay-edit">Edit</button>
-                </Link> */}
-
     </>
 
   );

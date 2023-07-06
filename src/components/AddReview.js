@@ -13,7 +13,6 @@ function AddReview(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
     const requestBody = { review, description, friendly, serviceId: props.serviceId };
-
     // Get the token from the localStorage
     const storedToken = localStorage.getItem('authToken');
 
@@ -32,6 +31,7 @@ function AddReview(props) {
       })
       .catch((error) => console.log(error));
   };
+
 
   return (
 

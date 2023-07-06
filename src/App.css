@@ -328,6 +328,7 @@ outline: none;
 
 .add-review-form h4 {
   color:#a9f6cd;
+  padding-bottom: 1rem;
 }
 
 .ReviewCardBody {
@@ -345,5 +346,13 @@ padding-left: 10%;
 padding-right: 10%;
 margin-top: 2rem;
 margin-bottom: 3rem;
+line-height: 0.5;
+}
+
+.Form-Img {
+  padding-bottom: 2rem;
+  padding-top: 4rem;
+  align-items: center;
+  padding-left: 5rem;
 }
 
