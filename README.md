@@ -24,7 +24,7 @@ npm install axios@1.4.0 bootstrap@5.3.0 react@18.2.0 react-bootstrap@2.8.0 react
 Start the development server and open the application in your default browser by running the following command:
 
 ```shell
-npm start
+npm run start
 ```
 This command will compile the code, start the development server, and automatically launch the application in your default browser.
 
