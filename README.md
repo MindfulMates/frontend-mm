@@ -13,22 +13,23 @@ This repository contains the frontend code for Mindful Mates, a platform that he
 
 ### Dependencies
 
+Set up any necessary environment variables. Please refer to the project documentation or .env.example file for a list of required variables. Ensure that you have all the required environment variables properly configured.
+
 Install the required dependencies by running the following command:
 
 ```shell
-npm install
-Environment Variables
-Set up any necessary environment variables. Please refer to the project documentation or .env.example file for a list of required variables. Ensure that you have all the required environment variables properly configured.
+npm install axios@1.4.0 bootstrap@5.3.0 react@18.2.0 react-bootstrap@2.8.0 react-dom@18.2.0 react-icons@4.10.1 react-router-dom@6.14.0 react-scripts@5.0.1 react-star-rate@0.2.0 web-vitals@2.1.4
+```
 
 Run the Application
 Start the development server and open the application in your default browser by running the following command:
 
-shell
-Copy code
+```shell
 npm start
+```
 This command will compile the code, start the development server, and automatically launch the application in your default browser.
 
-Demo
+### Demo
 Access the deployed version of Mindful Mates using the following links:
 
 https://mindfulmates.netlify.app/
@@ -37,3 +38,6 @@ https://mindfulmates.adaptable.app/
 Feel free to explore the platform and discover mindful services available in your neighborhood.
 
 Please refer to the backend repository's documentation for information on setting up and running the backend server.
+
+Cheers
+Nuno & Carolin
